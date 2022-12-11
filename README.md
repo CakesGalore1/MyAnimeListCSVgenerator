@@ -24,6 +24,12 @@ make_csv takes in up to 6 arguments: filename, minIndex, maxIndex, updates, prog
 - progress_increment is a float 0<x<1, which will display the percentage of completion our function is per update progress_increment times
 
 
+Since the make_csv function takes a very long time to run, instead of updating our dataset by gathering all of the data over again, we can simply make a new .csv file with only the enteries newer than what enteries our old csv file and combine the old and new files to make our updated dataset. While this might not account for changes in values of old enteries, most of those numbers only fluxuate by a negligible amount and saves a great deal amount. We have a function combine_csv which can do this.
+
+combine_csv takes in 3 arguments: csv1, csv2, filename
+- csv1 is a string which is the name of the first .csv file, which will be the top of the two .csv files. This .csv file should have a header with the column names.
+- csv2 is a string which is the name of the second .csv fie, which will be the bottom of the two .csv files. This .csv file shoud NOT have a header with the column names.
+
 Next, we read our .csv file into a pandas dataset and hand that into the AnimePredictor object as a parameter. The AnimePredictor class has many functions for data treating, making the predictive models, and getting our final result.
 
 Now we run the AnimePredictor.treatData() and animeData.createModelVariables() methods to get our data ready to be used in our machine learning models.
@@ -60,7 +66,7 @@ To test our results, here is a graph comparing the model's results to the actual
 ![image](https://user-images.githubusercontent.com/117700006/206916900-7462e469-8295-412d-bc99-a9d016fb9eb2.png)
 
 
-As we can see in the graph, most times than not, the Decision Tree Regression model had more accurate results than the linear regression model. This is not surprising as the error score for the decision tree model was much better.
+Surprisingly, the model is pretty accurate for both models, despite the vastly different error scores.
 
 
 
