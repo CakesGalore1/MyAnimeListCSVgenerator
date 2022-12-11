@@ -24,11 +24,6 @@ make_csv takes in up to 6 arguments: filename, minIndex, maxIndex, updates, prog
 - progress_increment is a float 0<x<1, which will display the percentage of completion our function is per update progress_increment times
 
 
-Since the make_csv function takes a very long time to run, instead of updating our dataset by gathering all of the data over again, we can simply make a new .csv file with only the enteries newer than what enteries our old csv file and combine the old and new files to make our updated dataset. While this might not account for changes in values of old enteries, most of those numbers only fluxuate by a negligible amount and saves a great deal amount. We have a function combine_csv which can do this.
-
-combine_csv takes in 3 arguments: csv1, csv2, filename
-- csv1 is a string which is the name of the first .csv file, which will be the top of the two .csv files. This .csv file should have a header with the column names.
-- csv2 is a string which is the name of the second .csv fie, which will be the bottom of the two .csv files. This .csv file shoud NOT have a header with the column names.
 
 Next, we read our .csv file into a pandas dataset and hand that into the AnimePredictor object as a parameter. The AnimePredictor class has many functions for data treating, making the predictive models, and getting our final result.
 
