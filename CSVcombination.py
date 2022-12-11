@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-# 1. defines path to csv files
-path = "Users/MyAnimeListCSVgenerator-main"
+# 1. defines with your own path to desire csv files
+path = "Users/MyAnimeListCSVgenerator-main" 
 
 # 2. creates list with files to merge based on name convention
 file_list = [path + f for f in os.listdir(path) if f.startswith('AnimeList')]
@@ -18,4 +18,4 @@ for file in sorted(file_list):
 csv_merged = pd.concat(csv_list, ignore_index=True)
 
 # 6. Single DF is saved to the path in CSV format, without index column
-csv_merged.to_csv(path + 'AnimeCombineList.csv', index=False)
+csv_merged.to_csv(path + 'AnimeList.csv', index=False)
