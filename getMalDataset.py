@@ -6,11 +6,11 @@ import csv
 
 
 def get_anime(idValue):
-    """
+    """Getting the information about the anime corresponding to the ID number
     Args: 
         int(Id): the MyAnimeList ID of the anime
     Return:
-        Anime: the Anime object corrisponding to the id number
+        Anime: the Anime object corresponding to the id number
     """
     try:
         anime=Anime(idValue)
@@ -23,11 +23,11 @@ def get_anime(idValue):
 
 
 def anime_to_data(idValue):
-    """
+    """Creating a list that contains lists of various information about an anime according to MyAnimeList.net corresponding to the ID of the anime.
     Args: 
         int(Id): the MyAnimeList ID of the anime
     Return:
-        list: a list of various information about an anime according to MyAnimeList.net
+        data: lists of various information about an anime according to MyAnimeList.net
     """
     anime = get_anime(idValue)
     if anime == False:
@@ -73,8 +73,14 @@ idValue]
 
 
 def get_anime_dataset(minIndex = 1, maxIndex = 80000, progress_updates = True, progress_increment = .5):
-    """
-    
+    """Creating a list that contains lists of various information about an anime according to MyAnimeList.net
+    Args: 
+    minIndex: the lowest anime ID number
+    maxIndex: the highest anime ID number
+    progress_updates:  a bool, indicates whether or not to print how far along an update our function is.
+    progess_increment: a float 0<x<1, which will display the percentage of completion our function is per update progress_increment times
+    Return:
+    dataset: a list of lists of various information about an anime according to MyAnimeList.net
     """
     dataset =  []
     progress = 0
@@ -90,8 +96,16 @@ def get_anime_dataset(minIndex = 1, maxIndex = 80000, progress_updates = True, p
 
 
 def make_csv(filename, minIndex, maxIndex, updates, progress_updates = True, progress_increment = .5):
-    """
-    
+    """Creating the csv file with the data collected from the fucntion get_anime_dataset()
+    Args: 
+    filename: user inputs the 'filename' for the new file that containing the animes data
+    minIndex: the lowest anime ID number
+    maxIndex: the highest anime ID number
+    updates: an int, indicating the number of times our function will write to the .csv file.
+    progess_updates:  a bool, indicates whether or not to print how far along an update our function is.
+    progress_increment: a float 0<x<1, which will display the percentage of completion our function is per update progress_increment times
+    returns:
+    None
     """
     if maxIndex < minIndex:
         raise ValueError("maxIndex cannot be smaller than minIndex")
