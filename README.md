@@ -13,6 +13,7 @@ We make a dataset of animes and relevant information from myanimelist.net. Then 
 ### Demo File Description
 The demo file already outlines what each code cell does and why it's there.
 First, we get our dataset. This can be done by running the make_csv function in getMalDatatset.py.
+
 ####IMPORATANT: this function takes an EXTREMELY long time to run if you wish to get the data of all of the anime on myanimelist.net. Instead, I recommend using the AnimeList.csv file provided in AnimeList.zip. If you wish to test out this function, then i recommend the following aruments:
 make_csv(1, 20, 1, True, .5)
 
