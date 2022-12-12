@@ -10,9 +10,9 @@ from sklearn.linear_model import LinearRegression
 pd.options.mode.chained_assignment = None
 #class which takes in a dataset and can treat our data and make a model , and run a prediction
 class AnimePredictor:
-"""
-Reads in csv file of data fomr MyAnimeList and cleans up the given csv file by dropping certain columns and changing all the data value to numbers. Then predict the anime score by the model Decision Tree Regressor and Linear Regression. 
-"""
+    """
+    Reads in csv file of data fomr MyAnimeList and cleans up the given csv file by dropping certain columns and changing all the data value to numbers. Then predict the anime score by the model Decision Tree Regressor and Linear Regression. 
+    """
     def __init__(self, animes):
         """
         Initialize class with user-supplied csv file
